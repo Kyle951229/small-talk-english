@@ -9,6 +9,8 @@
 
 ## 使用
 
+正式網站：[Small Talk 英文學習網站](https://kyle951229.github.io/small-talk-english/)
+
 GitHub Pages 設為 main 分支根目錄即可部署。這是純靜態網站，不需安裝套件或 API 金鑰。
 
 請閱讀 [使用說明](使用說明.md)、[英聽作業與來源](英聽作業與來源.md) 以及音檔、字庫授權說明。
