@@ -1,5 +1,5 @@
 {
-  "verifiedOn": "2026-11-01",
+  "verifiedOn": "2026-11-02",
   "course": {
     "days": 365,
     "weeks": 52,
@@ -51,7 +51,10 @@
     "365 天英聽作業與測驗產生，預設題次 4,048",
     "作業來源快照、切換級別後固定題組與內建替代題組",
     "提前回想與真正隔日到期、同課次隔日重新建卷",
-    "作業提交、來源與日期、測驗評分、舊版單字進度保存"
+    "作業提交、來源與日期、測驗評分、舊版單字進度保存",
+    "App 首頁、個人頁、字卡、中文偏好及步驟進度序列化",
+    "PWA 安裝清單、192／512 圖示與相對路徑快取檔案完整",
+    "Service Worker 子路徑作用域與快取上限、音檔 Range／suffix／416 回應、離線備援"
   ],
   "browserChecks": [
     "聽力選項核對與重新整理保存",
@@ -74,7 +77,14 @@
     "正式網址完整 3000 單字庫與 patch 搜尋到 Day 363",
     "390px 手機版面套用單欄，頁面寬度與內容寬度皆 390px",
     "原本機紀錄透過匯出／匯入接續正式網址，重新整理後保留",
-    "正式頁面瀏覽器記錄無 error 或 warning"
+    "正式頁面瀏覽器記錄無 error 或 warning",
+    "390px 下 App 首頁、底部分頁、課程、複習、英聽、個人、設定、紀錄、單字、字卡與測驗均無水平溢出",
+    "翻卡後顯示用法及三種間隔評分，評分可接續下一張",
+    "三步驟英聽表單跨步保留欄位並完整提交，顯示隔日回想日期",
+    "逐題測驗作答後重新整理，接續第 2 題；11 題提交後保存 64% 及逐題回饋",
+    "加入主畫面說明對話框可開啟與關閉，沒有假稱已安裝",
+    "斷網模擬下重新載入課程，課程與替代操作仍在；已快取 8.184 秒音檔可離線播放、無媒體錯誤",
+    "斷網測試後已恢復網路，窄版測試後已恢復桌面尺寸"
   ],
   "limitations": [
     "未代為授權麥克風，實體裝置錄音與辨識需使用者確認。",
@@ -85,7 +95,9 @@
     "原站免費英聽需連網另開頁面，未打包其音檔或逐字稿；可用性由原站維護。",
     "外站聽音時間無法自動納入本站可見頁面的專注計時。",
     "48 篇不同原站教材在 365 天中多輪深練，不是 365 篇不同文章。",
-    "作業內容與口語勾選為自我回報，不提供語意、文法、發音 AI 評分。"
+    "作業內容與口語勾選為自我回報，不提供語意、文法、發音 AI 評分。",
+    "安裝入口依瀏覽器支援顯示；未代替使用者完成實體手機或桌面的 App 安裝。",
+    "離線快取可被瀏覽器回收；外站英聽與部分語音辨識仍需網路，不提供背景通知或雲端同步。"
   ],
   "previousVerificationDate": "2026-10-29",
   "deployment": {
@@ -99,6 +111,20 @@
     "verifiedAt": "2026-11-01T14:43:20.649725+00:00",
     "remoteAssetChecks": 19,
     "allRemoteAssetChecksPassed": true,
-    "note": "對照版本為網站程式與教材；後續提交僅更新發布說明與驗證紀錄。"
+    "note": "對照版本為網站程式與教材；後續提交僅更新發布說明與驗證紀錄。",
+    "appRelease": "2026-11-02.1",
+    "applicationSourceCommitNote": "前次已驗證程式來源為原始網站；此次 App 介面發布 commit 另存於上架檢查紀錄。"
+  },
+  "app": {
+    "release": "2026-11-02.1",
+    "navigation": "5 mobile bottom tabs; desktop app rail",
+    "installableManifest": true,
+    "displayMode": "standalone",
+    "serviceWorker": true,
+    "offlineTextCourse": true,
+    "offlineAudio": "Previously fully cached same-origin recordings; up to 80 clips",
+    "preservesStorageKey": "smalltalk-v1",
+    "originalWordPlanVersion": 3,
+    "originalQuizSchemaVersion": 4
   }
 }

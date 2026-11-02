@@ -1,1 +1,54 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Small Talk · 每天，離世界近一點</title><link rel="stylesheet" href="style.css"></head><body><aside><a class="brand" href="#home">◒ <b>small talk<span>ENGLISH, EVERY DAY</span></b></a><div class="journey">YOUR LEARNING SPACE</div><nav><a href="#home">◫　今日學習</a><a href="#course">▦　365 天旅程</a><a href="#vocabulary">Aa　3,000 單字庫</a><a href="#review">↻　單字複習</a><a href="#homework">◖　每日英聽作業</a><a href="#practice">◎　開口練習</a><a href="#history">▤　學習紀錄</a><a href="#settings">⚙　個人設定</a></nav><div class="sidefoot"><div class="seed">✦</div><b>Small steps. Real progress.</b><p>每天一點，讓英文成為生活。</p><small>資料儲存在這個瀏覽器<br>記得定期匯出備份。</small></div></aside><main><header><span id="date"></span><span class="badge">●　A 起步 · 一年成長計畫</span></header><div id="app"></div><footer>以 3 個月簡單對話、1 年自然聊天為目標，實際進步依練習與接觸量而異。</footer></main><div id="toast" role="status"></div><section id="audioDock" class="audio-dock" hidden aria-label="課程發音播放器"><div><b>◖ 美式英文</b><span id="audioStatus" role="status" aria-live="polite">準備播放</span></div><audio id="courseAudio" controls preload="none" aria-label="課程英文音檔"></audio><button onclick="stopCourseAudio();document.getElementById('audioDock').hidden=true" aria-label="關閉播放器">×</button></section><script src="content.js"></script><script src="year-course.js"></script><script src="vocabulary-3000.js"></script><script src="stage-listening.js"></script><script src="audio-manifest.js"></script><script src="listening-content.js"></script><script src="app.js"></script><script src="vocabulary-ui.js"></script><script src="annual-ui.js"></script><script src="listening-program.js"></script></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f7f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Small Talk">
+<meta name="description" content="每天一小時，練單字、聽懂英文、自然接話。你的全年英文練習 App。">
+<title>Small Talk · 每日英文練習</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/app.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app-shell.css">
+</head>
+<body class="app-shell">
+<a class="skip-link" href="#app">跳到學習內容</a>
+<aside class="app-rail">
+<a class="brand" href="#home"><img src="icons/app.svg" alt="" width="38" height="38"><b>small talk<span>每天，說得更自然</span></b></a>
+<nav aria-label="主要功能">
+<a href="#home" data-tab="home"><span data-icon="home"></span>今日練習</a>
+<a href="#course" data-tab="course"><span data-icon="book"></span>我的課程</a>
+<a href="#review" data-tab="review"><span data-icon="repeat"></span>間隔複習</a>
+<a href="#homework" data-tab="homework"><span data-icon="listen"></span>英聽作業</a>
+<a href="#vocabulary"><span data-icon="cards"></span>3,000 單字庫</a>
+<a href="#history"><span data-icon="chart"></span>學習紀錄</a>
+<a href="#profile" data-tab="profile"><span data-icon="user"></span>我的</a>
+</nav>
+<div class="rail-install"><button data-shell="install"><span data-icon="download"></span>加到主畫面</button><p>隨時打開，接著上次練習。</p></div>
+</aside>
+<main>
+<header class="app-topbar">
+<button class="icon-button app-back" id="appBack" data-shell="back" aria-label="離開練習"><span data-icon="back"></span></button>
+<div class="app-heading"><span id="screenTitle">今日練習</span><time id="date"></time></div>
+<div class="topbar-right"><span id="connectionStatus" class="connection-status" role="status"></span><a class="avatar" href="#profile" aria-label="我的資料與設定">S</a></div>
+</header>
+<div id="app" tabindex="-1"></div>
+<footer class="app-footer">每天練習，逐步走向自然對話。學習紀錄儲存在此瀏覽器。</footer>
+</main>
+<nav id="bottomNav" class="bottom-nav" aria-label="App 分頁">
+<a href="#home" data-tab="home"><span data-icon="home"></span><span>今日</span></a>
+<a href="#course" data-tab="course"><span data-icon="book"></span><span>課程</span></a>
+<a href="#review" data-tab="review"><span class="tab-icon"><span data-icon="repeat"></span><b id="reviewBadge" hidden></b></span><span>複習</span></a>
+<a href="#homework" data-tab="homework"><span data-icon="listen"></span><span>英聽</span></a>
+<a href="#profile" data-tab="profile"><span data-icon="user"></span><span>我的</span></a>
+</nav>
+<div id="toast" role="status"></div>
+<section id="audioDock" class="audio-dock" hidden aria-label="課程發音播放器"><div><b>英文播放</b><span id="audioStatus" role="status" aria-live="polite">準備播放</span></div><audio id="courseAudio" controls preload="none" aria-label="課程英文音檔"></audio><button onclick="stopCourseAudio();document.getElementById('audioDock').hidden=true" aria-label="關閉播放器">×</button></section>
+<dialog id="installSheet" class="app-sheet" aria-labelledby="installTitle"><div class="sheet-handle"></div><button class="icon-button sheet-close" data-shell="close-install" aria-label="關閉安裝說明">×</button><img src="icons/app.svg" alt="" width="64" height="64"><h2 id="installTitle">把 Small Talk 放進主畫面</h2><p>像 App 一樣直接開啟，接著上次的進度。</p><button class="primary install-native" id="nativeInstall" data-shell="native-install" hidden>安裝 Small Talk</button><div class="install-instructions"><h3>iPhone / iPad</h3><p>用 Safari 開啟本網站，點「分享」→「加入主畫面」。若有「以網頁 App 開啟」，請保持開啟。</p><h3>Android / 電腦</h3><p>用 Chrome 或 Edge 開啟，從瀏覽器選單選「安裝應用程式」或「新增至主畫面」。支援時，上方會出現安裝按鈕。</p></div><div class="note"><b>離線可做什麼？</b><p id="offlineReady">首次連網開啟後，會準備文字課程與操作介面。</p><p>文字字卡、筆記和已完整快取的音檔可離線使用。外站英聽、Google 翻譯與部分語音辨識仍需網路。請定期匯出紀錄備份。</p></div><button data-shell="close-install" class="sheet-done">知道了</button></dialog>
+<script src="content.js"></script><script src="year-course.js"></script><script src="vocabulary-3000.js"></script><script src="stage-listening.js"></script><script src="audio-manifest.js"></script><script src="listening-content.js"></script><script src="app.js"></script><script src="vocabulary-ui.js"></script><script src="annual-ui.js"></script><script src="listening-program.js"></script><script src="app-shell.js"></script>
+</body>
+</html>
